@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Thái Hồng Quỳnh Chi — Portfolio</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600;1,700&family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400;1,9..40,500;1,9..40,600&display=swap" rel="stylesheet">
+<title>Quynh Chi T. Hong — Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600;1,700&family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&family=Nunito:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root {
   --bg:       #fef9f3;
@@ -23,7 +23,7 @@
   --white:    #ffffff;
   --border:   rgba(45,62,80,0.10);
   --serif: 'Playfair Display', Georgia, serif;
-  --sans:  'DM Sans', sans-serif;
+  --sans:  'Nunito', sans-serif;
   --hand:  'Cormorant Garamond', Georgia, serif;
   --shadow-sm: 0 2px 12px rgba(45,62,80,0.07);
   --shadow-md: 0 8px 32px rgba(45,62,80,0.10);
@@ -257,22 +257,15 @@ nav.scrolled { box-shadow: var(--shadow-sm); }
   text-align: center;
   position: relative;
 }
-.id-card-avatar-container {
-  width: 90px; height: 90px;
+.id-card-avatar {
+  width: 80px; height: 80px;
   border-radius: 50%;
+  background: linear-gradient(135deg, var(--coral), var(--plum));
   margin: 0 auto 14px;
+  display: flex; align-items:center; justify-content:center;
+  font-size: 2rem;
   box-shadow: 0 4px 20px rgba(232,128,106,0.35);
   border: 3px solid white;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: var(--white);
-}
-.id-card-avatar-container img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
 }
 .id-card-name {
   font-family: var(--serif);
@@ -473,7 +466,7 @@ nav.scrolled { box-shadow: var(--shadow-sm); }
   position: relative;
 }
 .clickable-card::after {
-  content: '↗ Details & Evidence';
+  content: '↗ Click for details';
   position: absolute;
   top: 24px; right: 28px;
   font-size: 0.7rem;
@@ -1048,45 +1041,25 @@ footer {
       </div>
       
       <div class="hero-quote">
-        Dedicated to exploring pharmacognosy and bio-extraction processes. Researching chemical formulations of Centella Asiatica and Vietnamese Cinnamon for advanced wound healing gels.
+        I study materials not only for what they are made of, but for the stories they carry.
       </div>
 
       <div class="stat-row">
-        <div class="stat-chip clickable-card"
-             data-modal-title="SAT Test Result"
-             data-modal-desc="Achieved a perfect score of 1600 on the SAT (Scholastic Assessment Test), placing in the top 0.01% globally."
-             data-modal-img1=""
-             data-modal-img2=""
-             data-modal-link="assets/academic/sat_score_weekend.pdf">
+        <div class="stat-chip">
           <span class="stat-num">1600</span>
-          <span class="stat-label">SAT Score ↗</span>
+          <span class="stat-label">SAT Score</span>
         </div>
-        <div class="stat-chip clickable-card"
-             data-modal-title="IELTS Test Report Form"
-             data-modal-desc="Scored Band 8.5 on the IELTS Academic test, certifying C2 Level English proficiency."
-             data-modal-img1=""
-             data-modal-img2=""
-             data-modal-link="assets/academic/ielts_report.pdf">
+        <div class="stat-chip">
           <span class="stat-num">8.5</span>
-          <span class="stat-label">IELTS ↗</span>
+          <span class="stat-label">IELTS</span>
         </div>
-        <div class="stat-chip clickable-card"
-             data-modal-title="High School Transcripts"
-             data-modal-desc="Maintained a stellar GPA of 9.6/10 overall during high school years, valedictorian of the chemistry honors cohort."
-             data-modal-img1=""
-             data-modal-img2=""
-             data-modal-link="assets/academic/high_school_transcripts.pdf">
+        <div class="stat-chip">
           <span class="stat-num">9.6</span>
-          <span class="stat-label">GPA / 10 ↗</span>
+          <span class="stat-label">GPA / 10</span>
         </div>
-        <div class="stat-chip clickable-card"
-             data-modal-title="AP Score Report"
-             data-modal-desc="Scored a perfect 5/5 on the AP Chemistry Exam. Currently preparing for AP Calculus BC, AP Physics C, and AP Statistics."
-             data-modal-img1=""
-             data-modal-img2=""
-             data-modal-link="assets/academic/sat_ap_score_report.pdf">
+        <div class="stat-chip">
           <span class="stat-num">5 / 5</span>
-          <span class="stat-label">AP Chemistry ↗</span>
+          <span class="stat-label">AP Chemistry</span>
         </div>
       </div>
     </div>
@@ -1095,9 +1068,7 @@ footer {
       <div class="id-card">
         <div class="id-card-top">
           <div class="id-card-sticker">Class of '27</div>
-          <div class="id-card-avatar-container">
-            <img src="assets/images/avatar.png" alt="Thái Hồng Quỳnh Chi">
-          </div>
+          <div class="id-card-avatar">🧪</div>
           <div class="id-card-name">Thái Hồng Quỳnh Chi</div>
           <div class="id-card-school">Hanoi-Amsterdam High School for the Gifted</div>
         </div>
@@ -1151,7 +1122,7 @@ footer {
         <div class="award-card silver reveal clickable-card"
              data-modal-title="Asian Chemistry Olympiad (AChO) - Silver Medal"
              data-modal-desc="Secured 2nd prize in the prestigious Asian Chemistry Olympiad, representing Vietnam against elite regional competitors in advanced chemical problem-solving."
-             data-modal-img1=""
+             data-modal-img1="https://images.unsplash.com/photo-1576086213369-97a306d36557?auto=format&fit=crop&q=80&w=800"
              data-modal-img2=""
              data-modal-link="">
           <span class="award-emoji">🥈</span>
@@ -1164,8 +1135,8 @@ footer {
         <!-- AWARD 2 -->
         <div class="award-card bronze reveal d1 clickable-card"
              data-modal-title="International Project Chemistry Olympiad - Bronze"
-             data-modal-desc="Synthesis & Isolation of Thiophene-2-boronic Acid. Mastered foundational multi-step organic synthesis. One of four Team Vietnam representatives at Lomonosov Moscow State University. Earned a Bronze Medal for our expert defense and research report."
-             data-modal-img1="assets/images/research/tuong.png"
+             data-modal-desc="Synthesis & Isolation of Thiophene-2-boronic Acid. Mastered foundational multi-step organic synthesis. One of four Team Vietnam representatives at Lomonosov Moscow State University."
+             data-modal-img1="https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&q=80&w=800"
              data-modal-img2=""
              data-modal-link="">
           <span class="award-emoji">🥉</span>
@@ -1179,7 +1150,7 @@ footer {
         <div class="award-card gold reveal d2 clickable-card"
              data-modal-title="INOVA 2025 — Gold Medal"
              data-modal-desc="Extraction of Cinnamaldehyde. Applied my foundation in organic chemistry to elevate a traditional Vietnamese botanical (cinnamon) into an advanced emulsion gel inhibiting biofilm on medical devices. Defended the research at the International Invention Show in Croatia."
-             data-modal-img1=""
+             data-modal-img1="https://images.unsplash.com/photo-1589330694653-06180572dc1a?auto=format&fit=crop&q=80&w=800"
              data-modal-img2=""
              data-modal-link="https://www.inova-croatia.com/">
           <span class="award-emoji">🥇</span>
@@ -1192,10 +1163,10 @@ footer {
         <!-- AWARD 4 -->
         <div class="award-card gold reveal d1 clickable-card"
              data-modal-title="AI-JAM US 2025 — Gold Medal"
-             data-modal-desc="Nutrition for Cancer Patients. Bridged biochemical rigor with practical care, developing an AI-integrated nutritional framework supporting the biochemical balance of radiotherapy patients. Backed by full research documentation."
-             data-modal-img1=""
+             data-modal-desc="Nutrition for Cancer Patients. Bridged biochemical rigor with practical care, developing an AI-integrated nutritional framework supporting the biochemical balance of radiotherapy patients."
+             data-modal-img1="https://images.unsplash.com/photo-1620825937374-87fc1d6aafdd?auto=format&fit=crop&q=80&w=800"
              data-modal-img2=""
-             data-modal-link="assets/extracurricular/ai_jam_2025_gold_award.pdf">
+             data-modal-link="">
           <span class="award-emoji">🥇</span>
           <div class="award-medal-label">Gold Medal · International</div>
           <div class="award-title">AI-JAM US 2025 — AI & Innovation Show</div>
@@ -1207,9 +1178,9 @@ footer {
         <div class="award-card green reveal d2 clickable-card"
              data-modal-title="Hanoi Chemistry Olympiad — First Prize"
              data-modal-desc="Awarded highest distinction in Hanoi's Chemistry Olympiad. Ranked 1st in entrance exam for Chemistry Honours program at Hanoi-Amsterdam."
-             data-modal-img1=""
+             data-modal-img1="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&q=80&w=800"
              data-modal-img2=""
-             data-modal-link="assets/extracurricular/school_honor_certificate.pdf">
+             data-modal-link="">
           <span class="award-emoji">🌿</span>
           <div class="award-medal-label">First Prize · City Level</div>
           <div class="award-title">Hanoi Chemistry Olympiad — Valedictorian</div>
@@ -1219,9 +1190,9 @@ footer {
 
         <!-- AWARD 6 -->
         <div class="award-card blue reveal d3 clickable-card"
-             data-modal-title="Harvard Crimson Quiz Bowl Chemistry 2025"
+             data-modal-title="Harvard Crimson Quiz Bowl - 2nd Place"
              data-modal-desc="Competed in a rigorous international tournament, collaborating with teammates to secure the Asia-Pacific runner-up position."
-             data-modal-img1=""
+             data-modal-img1="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&q=80&w=800"
              data-modal-img2=""
              data-modal-link="">
           <span class="award-emoji">🌏</span>
@@ -1233,9 +1204,9 @@ footer {
 
         <!-- AWARD 7 -->
         <div class="award-card silver reveal clickable-card"
-             data-modal-title="IJSO National Selection Round"
+             data-modal-title="IJSO National Selection Round - Second Prize"
              data-modal-desc="Secured 2nd prize in the national selection round for the International Junior Science Olympiad, demonstrating early proficiency in integrated sciences."
-             data-modal-img1=""
+             data-modal-img1="https://images.unsplash.com/photo-1564325724739-bae0bd08762c?auto=format&fit=crop&q=80&w=800"
              data-modal-img2=""
              data-modal-link="">
           <span class="award-emoji">🔬</span>
@@ -1249,7 +1220,7 @@ footer {
         <div class="award-card purple reveal d1 clickable-card"
              data-modal-title="Hanoi High School Entrance Exam - Salutatorian"
              data-modal-desc="Achieved the 2nd highest overall score among 105,000 candidates in the city-wide high school entrance examination."
-             data-modal-img1=""
+             data-modal-img1="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&q=80&w=800"
              data-modal-img2=""
              data-modal-link="">
           <span class="award-emoji">✨</span>
@@ -1263,7 +1234,7 @@ footer {
         <div class="award-card blue reveal d2 clickable-card"
              data-modal-title="Spring 2026 Calligraphy Competition"
              data-modal-desc="A recognition that bridges my analytical mindset with cultural preservation. Awarded 2nd prize by the Vietnamese Calligraphy Association for artistic and technical excellence."
-             data-modal-img1=""
+             data-modal-img1="https://images.unsplash.com/photo-1550592704-6c76defa99ce?auto=format&fit=crop&q=80&w=800"
              data-modal-img2=""
              data-modal-link="">
           <span class="award-emoji">🎋</span>
@@ -1288,7 +1259,7 @@ footer {
       <div class="research-card reveal clickable-card"
            data-modal-title="Optimization of the Synthesis and Isolation of Thiophene-2-boronic Acid"
            data-modal-desc="Independently executed the complete multi-step chemical synthesis and extraction process at Lomonosov Moscow State University. Conducted comprehensive literature reviews, authored a formal research report, and successfully defended methodology in front of an international expert panel — earning a Bronze Medal for Team Vietnam."
-           data-modal-img1="assets/images/research/tuong.png"
+           data-modal-img1="https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&q=80&w=800"
            data-modal-img2=""
            data-modal-link="">
         <div class="research-num-badge nb-peach">01</div>
@@ -1314,7 +1285,7 @@ footer {
       <div class="research-card reveal d1 clickable-card"
            data-modal-title="Nanocomposite ZnO/g-C₃N₄ for Dye Degradation"
            data-modal-desc="Assisted in preparation and execution of experiments testing advanced photocatalytic materials for breaking down colored dyes in water treatment applications. Systematically monitored experimental trials, recorded parameters, and gathered quantitative data to support the research team's analysis."
-           data-modal-img1="assets/images/research/measua.png"
+           data-modal-img1="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=800"
            data-modal-img2=""
            data-modal-link="">
         <div class="research-num-badge nb-mint">02</div>
@@ -1339,7 +1310,7 @@ footer {
       <div class="research-card reveal d2 clickable-card"
            data-modal-title="Microbial Solutions for Organic Waste Treatment"
            data-modal-desc="Developed an eco-friendly microbial solution from spoiled fruit peels to reduce odor and accelerate decomposition of organic food waste. Executed standard microbiological techniques including Gram staining and microscopic observation to verify lactic acid bacteria populations, resulting in a commercialized final product."
-           data-modal-img1="assets/images/research/hoanthien.png"
+           data-modal-img1="https://images.unsplash.com/photo-1579154204601-01588f351e67?auto=format&fit=crop&q=80&w=800"
            data-modal-img2=""
            data-modal-link="">
         <div class="research-num-badge nb-lav">03</div>
@@ -1365,7 +1336,7 @@ footer {
       <div class="research-card reveal d1 clickable-card"
            data-modal-title="Formulation of Herbal Centella Scar Cream"
            data-modal-desc="Optimized extraction of bioactive compounds from Centella asiatica (Rau má), mastering Thin Layer Chromatography and precise thermal control (70–75°C) to ensure stability. Adjusted formulation to achieve physiological pH 6.0. Inspired by Vietnamese traditional herbal practices, this project investigated how modern extraction and formulation techniques can preserve the efficacy of local medicinal plants while meeting contemporary safety and stability standards."
-           data-modal-img1="assets/images/research/raoma.png"
+           data-modal-img1="https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?auto=format&fit=crop&q=80&w=800"
            data-modal-img2=""
            data-modal-link="">
         <div class="research-num-badge nb-sky">04</div>
@@ -1507,7 +1478,7 @@ footer {
       <div class="leader-card reveal clickable-card"
            data-modal-title="Science Day — Camp Blast Summer Camp"
            data-modal-desc="Led a team of 10 to design and execute 15+ interactive science activities, simplifying complex reaction mechanisms into engaging educational formats for campers. Impact: 102 Campers, 15+ Activities, 98% Positive Feedback."
-           data-modal-img1=""
+           data-modal-img1="https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&q=80&w=800"
            data-modal-img2=""
            data-modal-link="">
         <div class="leader-card-deco deco-coral"></div>
@@ -1526,7 +1497,7 @@ footer {
       <div class="leader-card reveal d1 clickable-card"
            data-modal-title="Academic Head & Workshop Lead"
            data-modal-desc="Directed a 2-hour interactive environmental science workshop covering lactic acid bacteria theory with live lab demonstrations. Developed a gamified campus map navigation challenge reinforcing environmental stewardship."
-           data-modal-img1=""
+           data-modal-img1="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&q=80&w=800"
            data-modal-img2=""
            data-modal-link="">
         <div class="leader-card-deco deco-sage"></div>
@@ -1544,7 +1515,7 @@ footer {
       <div class="leader-card reveal d2 clickable-card"
            data-modal-title="Kính Vạn Hoa Cultural Exhibition"
            data-modal-desc="Founded and directed a cultural exhibition celebrating Vietnamese heritage. Bridged my analytical mindset with cultural preservation, curating knowledge about historical traditional costumes. Personally exhibited 1 original painting and 5 calligraphy pieces, and managed expert panel discussions."
-           data-modal-img1=""
+           data-modal-img1="https://images.unsplash.com/photo-1536924430914-91f9e2041b83?auto=format&fit=crop&q=80&w=800"
            data-modal-img2=""
            data-modal-link="">
         <div class="leader-card-deco deco-plum"></div>
@@ -1562,7 +1533,7 @@ footer {
       <div class="leader-card reveal d3 clickable-card"
            data-modal-title="Educational Speaker & Admissions Mentor"
            data-modal-desc="Selected as featured speaker at two of Hanoi's most prominent educational orientation events. Delivered engaging presentations on academic strategies, time-management, and psychological preparation for competitive entrance exams."
-           data-modal-img1=""
+           data-modal-img1="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&q=80&w=800"
            data-modal-img2=""
            data-modal-link="">
         <div class="leader-card-deco deco-sky"></div>
@@ -1588,16 +1559,16 @@ footer {
     <div class="social-bento">
       <!-- SOCIAL 1 -->
       <div class="social-card span2 bg-lavender reveal clickable-card"
-           data-modal-title="Thanh Phong Thư Môn Calligraphy"
-           data-modal-desc="Dedicated two years to the rigorous study of traditional Vietnamese calligraphy. This practice bridges my understanding of materials—the physical interaction of ink, water, and silk—with the preservation of cultural intention and mindfulness. Awarded Second Prize at the prestigious 'Spring 2026 Calligraphy Competition'."
-           data-modal-img1=""
+           data-modal-title="Thanh Phong Thư Môn"
+           data-modal-desc="Dedicated two years to the rigorous study of traditional Vietnamese calligraphy. This practice bridges my understanding of materials—the physical interaction of ink, water, and silk—with the preservation of cultural intention and mindfulness, transcending rigid imitation. Awarded Second Prize at the prestigious 'Spring 2026 Calligraphy Competition'."
+           data-modal-img1="https://images.unsplash.com/photo-1582214400407-73d9e86ba192?auto=format&fit=crop&q=80&w=800"
            data-modal-img2=""
            data-modal-link="">
         <span class="social-emoji">🎋</span>
         <div class="social-role-pill pill-purple">Award-Winning Calligrapher · 2024 – Present</div>
         <div class="social-org-name">Thanh Phong Thư Môn — Hanoi's Premier Calligraphy Club</div>
         <div class="social-text">Dedicated two years to the rigorous study of traditional Vietnamese calligraphy. This practice bridges my understanding of materials—the physical interaction of ink, water, and silk—with the preservation of cultural intention and mindfulness, transcending rigid imitation.</div>
-        <div class="social-text" style="margin-top:12px;">Awarded Second Prize at the prestigious "Spring 2026 Calligraphy Competition" hosted by the Vietnamese Calligraphy Association — national recognition of artistic and technical excellence.</div>
+        <div class="social-text" style="margin-top:12px;">Awarded Second Prize at the prestigious "Spring 2026 Calligraphy Competition" hosted by the Vietnamese Calligraphy Association — national recognition of artistic and technical excellence in preserving Vietnamese heritage.</div>
         <div class="social-stat">
           <span class="social-big-num">🥈</span>
           <span class="social-lbl">National 2nd Prize · Spring 2026</span>
@@ -1608,7 +1579,7 @@ footer {
       <div class="social-card bg-mint reveal d1 clickable-card"
            data-modal-title="Green Hanoi-Amsterdam (GHA)"
            data-modal-desc="Authored 20+ technical articles on 'Green Chemistry' for 3,000+ students. Led sustainability workshops reducing event plastic waste by 60%. Increased recycling participation by 40% through local organization partnerships."
-           data-modal-img1=""
+           data-modal-img1="https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?auto=format&fit=crop&q=80&w=800"
            data-modal-img2=""
            data-modal-link="">
         <span class="social-emoji">🌿</span>
@@ -1625,9 +1596,9 @@ footer {
       <div class="social-card bg-peach reveal d2 clickable-card"
            data-modal-title="SOS Children's Village Volunteer"
            data-modal-desc="Developed a science curriculum for 30+ underprivileged children. Co-organized a fundraising campaign raising $1,000+ for educational supplies. Mentored students in natural sciences."
-           data-modal-img1=""
+           data-modal-img1="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&q=80&w=800"
            data-modal-img2=""
-           data-modal-link="assets/extracurricular/sos_volunteer_2025.pdf">
+           data-modal-link="">
         <span class="social-emoji">❤️</span>
         <div class="social-role-pill pill-coral">Volunteer · 2025</div>
         <div class="social-org-name">SOS Children's Village</div>
@@ -1642,7 +1613,7 @@ footer {
       <div class="social-card bg-sky reveal d1 clickable-card"
            data-modal-title="Sorsee Project 2024"
            data-modal-desc="Provided intensive 1-on-1 Chemistry & English tutoring for middle school students. Designed customized study roadmaps and offered psychological support for high-stakes exam preparation."
-           data-modal-img1=""
+           data-modal-img1="https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?auto=format&fit=crop&q=80&w=800"
            data-modal-img2=""
            data-modal-link="">
         <span class="social-emoji">📚</span>
@@ -1655,7 +1626,7 @@ footer {
       <div class="social-card bg-lemon reveal d2 clickable-card"
            data-modal-title="Centella Scar Cream Research"
            data-modal-desc="Extracted high-purity bioactive compounds from Centella asiatica and formulated a scar treatment cream with physiological pH 6.0. Inspired by Vietnamese traditional herbal practices, this project investigated how modern extraction and formulation techniques can preserve the efficacy of local medicinal plants."
-           data-modal-img1="assets/images/research/raoma.png"
+           data-modal-img1="https://images.unsplash.com/photo-1556228578-0d85b1a4d571?auto=format&fit=crop&q=80&w=800"
            data-modal-img2=""
            data-modal-link="">
         <span class="social-emoji">🔬</span>
@@ -1669,12 +1640,12 @@ footer {
            style="grid-column: 1 / -1; background: linear-gradient(135deg, var(--lavender) 0%, var(--white) 60%);"
            data-modal-title="Tơ Lụa & Mực — Silk, Ink & Memory"
            data-modal-desc="Created and curated an online exhibition examining Vietnamese silk garments and calligraphy through the lens of materials science. Analyzed how silk fibroin structure, natural dye chemistry, iron–tannin interactions, and environmental conditions influenced the durability and appearance of historical artifacts."
-           data-modal-img1="assets/images/research/tuong.png"
+           data-modal-img1="https://images.unsplash.com/photo-1615147342761-9238e15d8b96?auto=format&fit=crop&q=80&w=800"
            data-modal-img2=""
-           data-modal-link="assets/extracurricular/creative_portfolio.pdf">
+           data-modal-link="https://your-online-exhibition-link.com">
         <span class="social-emoji">📜</span>
         <div class="social-role-pill pill-purple">Creator & Lead Researcher · 2025</div>
-        <div class="social-org-name">Tơ Lụa & Mực — Silk, Ink & Memory ↗</div>
+        <div class="social-org-name">Tơ Lụa & Mực — Silk, Ink & Memory</div>
         <div class="social-text">Created and curated an online exhibition examining Vietnamese silk garments and calligraphy through the lens of materials science. Analyzed how silk fibroin structure, natural dye chemistry, iron–tannin interactions, and environmental conditions influenced the durability and appearance of historical artifacts. Connected these material properties to the cultural values and historical contexts of different Vietnamese dynasties.</div>
       </div>
     </div>
@@ -1742,7 +1713,7 @@ footer {
     </div>
     
     <a href="#" target="_blank" class="modal-btn" id="m-link" style="display:none;">
-      Open Document / Link ↗
+      Visit Website ↗
     </a>
   </div>
 </div>
@@ -1772,7 +1743,6 @@ const skillObs = new IntersectionObserver(entries => {
   entries.forEach(e => {
     if (e.isIntersecting) {
       e.target.querySelectorAll('.skill-fill').forEach(f => {
-        f.style.transform = 'scaleX(1)';
         f.style.width = (parseFloat(f.dataset.w) * 100) + '%';
       });
     }
@@ -1791,18 +1761,13 @@ const mLink = document.getElementById('m-link');
 
 // Function to open modal
 document.querySelectorAll('.clickable-card').forEach(card => {
-  card.addEventListener('click', (e) => {
-    // Prevent default trigger if target has individual anchor inside (unless card itself is clicked)
-    if (e.target.tagName === 'A' && e.target !== card) return;
-
+  card.addEventListener('click', () => {
     // 1. Get data from clicked card
     const title = card.getAttribute('data-modal-title');
     const desc = card.getAttribute('data-modal-desc');
     const img1 = card.getAttribute('data-modal-img1');
     const img2 = card.getAttribute('data-modal-img2');
     const link = card.getAttribute('data-modal-link');
-
-    if (!title) return; // Prevent modals on non-configured cards
 
     // 2. Populate Modal
     mTitle.textContent = title;
@@ -1811,18 +1776,13 @@ document.querySelectorAll('.clickable-card').forEach(card => {
     // Clear old images
     mGallery.innerHTML = '';
     // Add new images if they exist
-    if(img1 && img1.trim() !== "") mGallery.innerHTML += `<img src="${img1}" alt="Project Image 1">`;
-    if(img2 && img2.trim() !== "") mGallery.innerHTML += `<img src="${img2}" alt="Project Image 2">`;
+    if(img1) mGallery.innerHTML += `<img src="${img1}" alt="Project Image 1">`;
+    if(img2) mGallery.innerHTML += `<img src="${img2}" alt="Project Image 2">`;
 
     // Handle Link button
     if(link && link !== "") {
       mLink.href = link;
       mLink.style.display = 'inline-flex';
-      if(link.toLowerCase().endsWith('.pdf')) {
-        mLink.textContent = "View PDF Document ↗";
-      } else {
-        mLink.textContent = "Visit Website ↗";
-      }
     } else {
       mLink.style.display = 'none';
     }

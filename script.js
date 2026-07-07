@@ -111,14 +111,8 @@ const studentEvents = [
                 "path": "assets/academic/high_school_transcripts.pdf",
                 "is_pdf": true,
                 "is_video": false
-            },
-            {
-                "name": "Passport Credentials (Hộ chiếu cá nhân)",
-                "path": "assets/identity/passport.pdf",
-                "is_pdf": true,
-                "is_video": false
             }
-        ],
+            ],
         "keywords": [
             "certs",
             "score"

@@ -443,10 +443,40 @@ nav.scrolled { box-shadow: var(--shadow-sm); }
   border-radius: 12px;
   object-fit: cover;
   border: 1px solid var(--border);
+  display: block;
 }
-.modal-gallery img:only-child {
+.modal-gallery > img:only-child,
+.modal-gallery > a:only-child {
   grid-column: 1 / -1;
+}
+.modal-gallery > img:only-child,
+.modal-gallery > a:only-child img {
   max-height: 400px;
+}
+.modal-gallery a.modal-gallery-link {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  text-decoration: none;
+}
+.modal-gallery a.modal-gallery-link::after {
+  content: "View PDF ↗";
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  background: rgba(26,35,50,0.8);
+  color: #fff;
+  font-size: 0.68rem;
+  font-weight: 700;
+  font-family: var(--sans);
+  padding: 5px 12px;
+  border-radius: 20px;
+  opacity: 0;
+  transition: opacity 0.2s;
+  pointer-events: none;
+}
+.modal-gallery a.modal-gallery-link:hover::after {
+  opacity: 1;
 }
 .modal-btn {
   display: inline-flex;
@@ -1055,7 +1085,7 @@ footer {
         <div class="stat-chip clickable-card"
              data-modal-title="SAT Test Result"
              data-modal-desc="Achieved a perfect score of 1600 on the SAT (Scholastic Assessment Test), placing in the top 0.01% globally."
-             data-modal-img1=""
+             data-modal-img1="assets/images/covers/sat_score_cover.jpg"
              data-modal-img2=""
              data-modal-link="assets/academic/sat_score_weekend.pdf">
           <span class="stat-num">1600</span>
@@ -1064,7 +1094,7 @@ footer {
         <div class="stat-chip clickable-card"
              data-modal-title="IELTS Test Report Form"
              data-modal-desc="Scored Band 8.5 on the IELTS Academic test, certifying C2 Level English proficiency."
-             data-modal-img1=""
+             data-modal-img1="assets/images/covers/ielts_report_cover.jpg"
              data-modal-img2=""
              data-modal-link="assets/academic/ielts_report.pdf">
           <span class="stat-num">8.5</span>
@@ -1073,7 +1103,7 @@ footer {
         <div class="stat-chip clickable-card"
              data-modal-title="High School Transcripts"
              data-modal-desc="Maintained a stellar GPA of 9.6/10 overall during high school years, valedictorian of the chemistry honors cohort."
-             data-modal-img1=""
+             data-modal-img1="assets/images/covers/transcript_cover.jpg"
              data-modal-img2=""
              data-modal-link="assets/academic/high_school_transcripts.pdf">
           <span class="stat-num">9.6</span>
@@ -1082,7 +1112,7 @@ footer {
         <div class="stat-chip clickable-card"
              data-modal-title="AP Score Report"
              data-modal-desc="Scored a perfect 5/5 on the AP Chemistry Exam. Currently preparing for AP Calculus BC, AP Physics C, and AP Statistics."
-             data-modal-img1=""
+             data-modal-img1="assets/images/covers/ap_score_cover.jpg"
              data-modal-img2=""
              data-modal-link="assets/academic/sat_ap_score_report.pdf">
           <span class="stat-num">5 / 5</span>
@@ -1179,9 +1209,9 @@ footer {
         <div class="award-card gold reveal d2 clickable-card"
              data-modal-title="INOVA 2025 — Gold Medal"
              data-modal-desc="Extraction of Cinnamaldehyde. Applied my foundation in organic chemistry to elevate a traditional Vietnamese botanical (cinnamon) into an advanced emulsion gel inhibiting biofilm on medical devices. Defended the research at the International Invention Show in Croatia."
-             data-modal-img1=""
+             data-modal-img1="assets/images/covers/inova_croatia_award_cover.jpg"
              data-modal-img2=""
-             data-modal-link="https://www.inova-croatia.com/">
+             data-modal-link="assets/extracurricular/inova_croatia_gold_certificate.pdf">
           <span class="award-emoji">🥇</span>
           <div class="award-medal-label">Gold Medal · International</div>
           <div class="award-title">INOVA 2025 — International Invention Show</div>
@@ -1193,8 +1223,9 @@ footer {
         <div class="award-card gold reveal d1 clickable-card"
              data-modal-title="AI-JAM US 2025 — Gold Medal"
              data-modal-desc="Nutrition for Cancer Patients. Bridged biochemical rigor with practical care, developing an AI-integrated nutritional framework supporting the biochemical balance of radiotherapy patients. Backed by full research documentation."
-             data-modal-img1=""
-             data-modal-img2=""
+             data-modal-img1="assets/images/covers/ai_jam_award_cover.jpg"
+             data-modal-img2="assets/images/covers/radiotherapy_research_cover.jpg"
+             data-modal-img2-link="assets/extracurricular/radiotherapy_nutrition_research.pdf"
              data-modal-link="assets/extracurricular/ai_jam_2025_gold_award.pdf">
           <span class="award-emoji">🥇</span>
           <div class="award-medal-label">Gold Medal · International</div>
@@ -1209,7 +1240,7 @@ footer {
              data-modal-desc="Awarded highest distinction in Hanoi's Chemistry Olympiad. Ranked 1st in entrance exam for Chemistry Honours program at Hanoi-Amsterdam."
              data-modal-img1=""
              data-modal-img2=""
-             data-modal-link="assets/extracurricular/school_honor_certificate.pdf">
+             data-modal-link="">
           <span class="award-emoji">🌿</span>
           <div class="award-medal-label">First Prize · City Level</div>
           <div class="award-title">Hanoi Chemistry Olympiad — Valedictorian</div>
@@ -1625,7 +1656,7 @@ footer {
       <div class="social-card bg-peach reveal d2 clickable-card"
            data-modal-title="SOS Children's Village Volunteer"
            data-modal-desc="Developed a science curriculum for 30+ underprivileged children. Co-organized a fundraising campaign raising $1,000+ for educational supplies. Mentored students in natural sciences."
-           data-modal-img1=""
+           data-modal-img1="assets/images/covers/sos_volunteer_cover.jpg"
            data-modal-img2=""
            data-modal-link="assets/extracurricular/sos_volunteer_2025.pdf">
         <span class="social-emoji">❤️</span>
@@ -1656,8 +1687,8 @@ footer {
            data-modal-title="Centella Scar Cream Research"
            data-modal-desc="Extracted high-purity bioactive compounds from Centella asiatica and formulated a scar treatment cream with physiological pH 6.0. Inspired by Vietnamese traditional herbal practices, this project investigated how modern extraction and formulation techniques can preserve the efficacy of local medicinal plants."
            data-modal-img1="assets/images/research/raoma.png"
-           data-modal-img2=""
-           data-modal-link="">
+           data-modal-img2="assets/images/covers/centella_cream_cover.jpg"
+           data-modal-link="assets/extracurricular/centella_scar_cream_portfolio.pdf">
         <span class="social-emoji">🔬</span>
         <div class="social-role-pill pill-green">Personal Project · 2025</div>
         <div class="social-org-name">Centella Scar Cream Research</div>
@@ -1671,7 +1702,7 @@ footer {
            data-modal-desc="Created and curated an online exhibition examining Vietnamese silk garments and calligraphy through the lens of materials science. Analyzed how silk fibroin structure, natural dye chemistry, iron–tannin interactions, and environmental conditions influenced the durability and appearance of historical artifacts."
            data-modal-img1="assets/images/research/tuong.png"
            data-modal-img2=""
-           data-modal-link="assets/extracurricular/creative_portfolio.pdf">
+           data-modal-link="">
         <span class="social-emoji">📜</span>
         <div class="social-role-pill pill-purple">Creator & Lead Researcher · 2025</div>
         <div class="social-org-name">Tơ Lụa & Mực — Silk, Ink & Memory ↗</div>
@@ -1800,6 +1831,8 @@ document.querySelectorAll('.clickable-card').forEach(card => {
     const desc = card.getAttribute('data-modal-desc');
     const img1 = card.getAttribute('data-modal-img1');
     const img2 = card.getAttribute('data-modal-img2');
+    const img1Link = card.getAttribute('data-modal-img1-link');
+    const img2Link = card.getAttribute('data-modal-img2-link');
     const link = card.getAttribute('data-modal-link');
 
     if (!title) return; // Prevent modals on non-configured cards
@@ -1808,11 +1841,24 @@ document.querySelectorAll('.clickable-card').forEach(card => {
     mTitle.textContent = title;
     mDesc.textContent = desc;
 
+    // Build a gallery image block. If a PDF link applies to this image
+    // (either its own override, or the card's main link), wrap it in an
+    // <a> so the cover image itself opens the source document directly.
+    function galleryImg(src, alt, overrideLink) {
+      if (!src || src.trim() === "") return "";
+      const target = (overrideLink && overrideLink.trim() !== "") ? overrideLink : link;
+      const tag = `<img src="${src}" alt="${alt}">`;
+      if (target && target.trim() !== "" && target.toLowerCase().endsWith('.pdf')) {
+        return `<a href="${target}" target="_blank" rel="noopener" class="modal-gallery-link">${tag}</a>`;
+      }
+      return tag;
+    }
+
     // Clear old images
     mGallery.innerHTML = '';
     // Add new images if they exist
-    if(img1 && img1.trim() !== "") mGallery.innerHTML += `<img src="${img1}" alt="Project Image 1">`;
-    if(img2 && img2.trim() !== "") mGallery.innerHTML += `<img src="${img2}" alt="Project Image 2">`;
+    mGallery.innerHTML += galleryImg(img1, "Project Image 1", img1Link);
+    mGallery.innerHTML += galleryImg(img2, "Project Image 2", img2Link);
 
     // Handle Link button
     if(link && link !== "") {

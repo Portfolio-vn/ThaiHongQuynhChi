@@ -1172,6 +1172,15 @@ section:not(.hero) { position:relative; }
 .research-year-big { color:rgba(159,52,43,.12); }
 .skill-track { background:rgba(64,45,31,.11); border-radius:0; height:4px; }
 .skill-fill { background:var(--coral) !important; border-radius:0; }
+.skill-block { padding:24px; overflow:hidden; }
+.skill-row-top {
+  display:grid;
+  grid-template-columns:minmax(0,1fr) max-content;
+  align-items:baseline;
+  column-gap:20px;
+}
+.skill-row-name { min-width:0; line-height:1.35; }
+.skill-row-level { white-space:nowrap; padding-right:2px; }
 .social-bento { gap:16px; }
 
 #tq2026 { max-width:1200px !important; margin:80px auto !important; padding:0 clamp(24px,5vw,56px) !important; }
@@ -1779,7 +1788,6 @@ footer { background:#171310; color:#a99e91; border-top:1px solid rgba(255,255,25
               <div class="lang-name">Vietnamese</div>
               <div class="lang-sub">Native Language</div>
             </div>
-            <div class="lang-badge">C2</div>
           </div>
           <div class="lang-card">
             <div class="lang-flag">🇬🇧</div>

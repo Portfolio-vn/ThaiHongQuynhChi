@@ -1003,6 +1003,292 @@ footer {
   .modal-gallery { grid-template-columns: 1fr; }
 }
 </style>
+<style id="silk-editorial-redesign">
+/* 2026 redesign — Vietnamese silk, embroidery and research journal */
+:root {
+  --bg: #f2eadb;
+  --peach: #ead7bf;
+  --blush: #e5c5b6;
+  --mint: #dfe3d2;
+  --sky: #d8ddd6;
+  --lavender: #ded7d0;
+  --lemon: #eee4c7;
+  --sage-green: #66735b;
+  --coral: #9f342b;
+  --plum: #672f33;
+  --navy: #24211d;
+  --ink: #211b17;
+  --muted: #6f665c;
+  --white: #f8f1e5;
+  --border: rgba(64, 45, 31, .20);
+  --serif: 'Cormorant Garamond', Georgia, serif;
+  --sans: 'DM Sans', sans-serif;
+  --hand: 'Playfair Display', Georgia, serif;
+  --shadow-sm: 0 5px 18px rgba(55,38,24,.08);
+  --shadow-md: 0 14px 34px rgba(55,38,24,.12);
+  --shadow-lg: 0 24px 60px rgba(55,38,24,.16);
+}
+
+html { background: #241d18; }
+body {
+  background-color: var(--bg);
+  background-image:
+    linear-gradient(rgba(91,65,41,.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(91,65,41,.025) 1px, transparent 1px),
+    radial-gradient(circle at 18% 10%, rgba(255,255,255,.72), transparent 32%),
+    radial-gradient(circle at 82% 30%, rgba(159,52,43,.055), transparent 30%);
+  background-size: 5px 5px, 5px 5px, auto, auto;
+}
+body::before {
+  content: '絲'; position: fixed; right: -2vw; top: 12vh; z-index: 0;
+  font-family: Georgia, serif; font-size: min(28vw, 360px); line-height: 1;
+  color: rgba(88,55,39,.035); pointer-events: none;
+}
+.blob-layer { display:none; }
+#prog { height: 2px; background: var(--coral); border-radius: 0; }
+
+nav {
+  padding: 19px clamp(24px, 5vw, 72px);
+  background: rgba(242,234,219,.91);
+  border-bottom: 1px solid rgba(64,45,31,.22);
+  backdrop-filter: blur(12px) saturate(.8);
+}
+.nav-logo {
+  font-family: var(--sans); font-style: normal; text-transform: uppercase;
+  font-size: .74rem; letter-spacing: .24em; color: var(--ink);
+}
+.nav-logo::before { content:'✦'; color:var(--coral); margin-right:10px; }
+.nav-links { gap: 1px; }
+.nav-links a {
+  border-radius: 0; padding: 8px 12px; color: #4f473f;
+  font-size: .67rem; letter-spacing: .13em; text-transform: uppercase;
+}
+.nav-links a:hover { background: transparent; color: var(--coral); }
+
+.hero { min-height: 100svh; padding: 132px clamp(24px, 6vw, 86px) 80px; }
+.hero::before, .hero::after {
+  content:''; position:absolute; pointer-events:none;
+}
+.hero::before {
+  inset: 94px 4vw 36px; border: 1px solid rgba(72,48,31,.18);
+}
+.hero::after {
+  width: 36%; height: 62%; right: 0; bottom: 5%;
+  background: repeating-linear-gradient(128deg, transparent 0 17px, rgba(159,52,43,.07) 18px 19px);
+  clip-path: polygon(35% 0,100% 0,100% 100%,0 100%);
+}
+.hero-inner { max-width: 1240px; grid-template-columns: minmax(0,1fr) 350px; gap: clamp(48px,8vw,118px); }
+.hero-left { position:relative; z-index:2; }
+.hero-badge {
+  background: transparent; color: var(--muted); padding: 0 0 10px;
+  border-radius:0; border-bottom:1px solid var(--border); margin-bottom:34px;
+  font-size:.65rem; letter-spacing:.22em;
+}
+.hero-badge .dot { border-radius:0; width:20px; height:1px; background:var(--coral); animation:none; }
+.hero-name {
+  font-family: var(--serif); font-size: clamp(4.1rem, 8.2vw, 7.8rem);
+  font-weight:600; line-height:.78; letter-spacing:-.055em; margin-bottom:30px;
+}
+.hero-name .accent { color: var(--coral); font-weight:500; }
+.hero-name .accent::after { display:none; }
+.hero-sub { color:var(--muted); text-transform:uppercase; letter-spacing:.12em; font-size:.7rem; gap:8px; }
+.hero-sub .pill {
+  background:transparent; color:var(--ink); padding:5px 9px; border:1px solid var(--border);
+  border-radius:0; font-size:.64rem; letter-spacing:.08em;
+}
+.hero-quote {
+  max-width:690px; background:transparent; box-shadow:none; border-radius:0;
+  border:0; border-left:1px solid var(--coral); padding:4px 0 4px 26px;
+  font-family:var(--sans); font-style:normal; font-size:clamp(.94rem,1.4vw,1.1rem);
+  line-height:1.82; color:#554c43; margin-bottom:34px;
+}
+.hero-quote::before { content:'THREAD / THOUGHT / TRANSFORMATION'; top:-31px; left:26px; color:var(--coral); font:600 .58rem/1 var(--sans); letter-spacing:.18em; }
+.stat-row { gap:0; border-top:1px solid var(--border); border-bottom:1px solid var(--border); width:max-content; max-width:100%; }
+.stat-chip {
+  background:transparent; border:0; border-right:1px solid var(--border); border-radius:0;
+  box-shadow:none; padding:16px 21px; min-width:118px;
+}
+.stat-chip:last-child { border-right:0; }
+.stat-chip:hover { background:rgba(255,255,255,.35); transform:translateY(-2px); box-shadow:none; }
+.stat-num { font-family:var(--serif); font-size:2rem; color:var(--coral); }
+.stat-label { font-size:.56rem; letter-spacing:.14em; color:var(--muted); }
+
+.hero-right { position:relative; z-index:2; }
+.hero-right::before {
+  content:''; position:absolute; inset:-25px 45px -25px -34px; z-index:-1;
+  border:1px solid rgba(159,52,43,.35); transform:rotate(-3deg);
+}
+.id-card { width:330px; border-radius:0; background:#efe1cb; border:1px solid rgba(54,37,26,.28); box-shadow:var(--shadow-lg); }
+.id-card-top { background:#7f2524; padding:35px 28px 27px; }
+.id-card-top::after {
+  content:''; position:absolute; inset:0; opacity:.22; pointer-events:none;
+  background:repeating-linear-gradient(90deg,transparent 0 3px,rgba(255,255,255,.18) 4px), repeating-linear-gradient(0deg,transparent 0 3px,rgba(0,0,0,.1) 4px);
+}
+.id-card-sticker { border-radius:0; background:#ead9ba; color:#6b211f; transform:rotate(2deg); text-transform:uppercase; letter-spacing:.1em; }
+.id-card-avatar-container { width:124px; height:124px; border:5px double #ead9ba; box-shadow:0 0 0 10px rgba(234,217,186,.14); }
+.id-card-name { color:#fff8e9; font-size:1.45rem; }
+.id-card-school { color:#ead9ba; letter-spacing:.09em; }
+.id-card-body { background:#efe4d3; }
+.id-row { border-bottom:1px dashed rgba(61,43,31,.2); }
+.id-key { letter-spacing:.15em; color:#7b6d61; }
+.id-val.coral { color:var(--coral); }
+
+section:not(.hero) { position:relative; }
+.section-wrap, .full-section { max-width:1200px; padding-top:100px; padding-bottom:100px; }
+.sec-tag {
+  background:transparent !important; color:var(--coral) !important; padding:0 0 10px;
+  border-radius:0; border-bottom:1px solid var(--border); font-size:.63rem; letter-spacing:.2em;
+  text-transform:uppercase;
+}
+.sec-title, .contact-heading {
+  font-family:var(--serif); font-weight:600; letter-spacing:-.035em; line-height:.92;
+}
+.sec-title em, .contact-heading em { color:var(--coral); font-weight:500; }
+.underline-word::after { height:1px; background:var(--coral); }
+#philosophy { background:rgba(248,241,229,.78) !important; border-block:1px solid var(--border); }
+#philosophy::before { content:'織'; position:absolute; left:3vw; top:20px; font:8rem Georgia; color:rgba(159,52,43,.055); }
+#philosophy p { color:#4f463e !important; }
+#awards > div, #skills, #leadership { background:transparent !important; }
+#awards > div { padding-top:100px !important; padding-bottom:100px !important; }
+
+.award-card, .research-card, .skill-block, .leader-card, .social-card, .lang-card, .contact-link {
+  background:rgba(248,241,229,.66) !important; border:1px solid var(--border) !important;
+  border-radius:0 !important; box-shadow:none !important;
+}
+.award-card, .leader-card, .social-card { position:relative; overflow:hidden; }
+.award-card::before, .leader-card::before, .social-card::before {
+  content:''; position:absolute; left:0; top:0; bottom:0; width:3px; background:var(--coral); opacity:.8;
+}
+.award-card:hover, .research-card:hover, .leader-card:hover, .social-card:hover, .contact-link:hover {
+  transform:translateY(-4px); box-shadow:var(--shadow-md) !important; border-color:rgba(159,52,43,.5) !important;
+}
+.award-emoji, .leader-icon, .social-emoji { filter:grayscale(1) sepia(.5); }
+.award-title, .research-title, .leader-org, .social-org-name { font-family:var(--serif); color:var(--ink); }
+.award-year-tag, .award-medal-label, .research-num-badge, .leader-role-tag, .social-role-pill, .chip {
+  border-radius:0 !important; text-transform:uppercase; letter-spacing:.08em;
+}
+.research-card { border-left:3px solid var(--coral) !important; }
+.research-num-badge { background:transparent !important; color:var(--coral) !important; border:1px solid currentColor; }
+.research-year-big { color:rgba(159,52,43,.12); }
+.skill-track { background:rgba(64,45,31,.11); border-radius:0; height:4px; }
+.skill-fill { background:var(--coral) !important; border-radius:0; }
+.social-bento { gap:16px; }
+
+#tq2026 { max-width:1200px !important; margin:80px auto !important; padding:0 clamp(24px,5vw,56px) !important; }
+#tq2026 h2 { font:600 clamp(2.6rem,5vw,4.6rem)/.95 var(--serif); letter-spacing:-.04em; color:var(--ink); }
+#tq2026 p { color:var(--coral); text-transform:uppercase; letter-spacing:.16em; font-size:.65rem; opacity:1 !important; }
+#tq2026 img { border-radius:0 !important; filter:saturate(.72) sepia(.08); border:1px solid var(--border); transition:.3s; }
+#tq2026 a:nth-child(3n+1) img { transform:translateY(12px); }
+#tq2026 img:hover { filter:none; transform:scale(1.02); }
+
+#contact { background:#241d18; color:#efe5d5; }
+.contact-heading { color:#f5ecdd; }
+.contact-sub { color:#bdb1a3; }
+.contact-link { background:rgba(255,255,255,.035) !important; border-color:rgba(255,255,255,.14) !important; color:#efe5d5; }
+.contact-link-val { color:#efe5d5; }
+.contact-icon { background:transparent !important; color:#d68370 !important; border:1px solid rgba(214,131,112,.45); border-radius:0; }
+.contact-right-panel { border-radius:0; background:#862d29; border:1px solid rgba(255,255,255,.15); box-shadow:none; }
+.contact-right-panel::before { content:'絲'; color:rgba(255,255,255,.08); }
+.contact-quote-big { color:#fff5e5; }
+footer { background:#171310; color:#a99e91; border-top:1px solid rgba(255,255,255,.12); }
+
+.modal-content { border-radius:0; background:#f3eadb; border:1px solid var(--border); }
+.modal-btn { border-radius:0; background:var(--coral); }
+
+/* Silk imagery & motion */
+.hero-silk-ribbon {
+  position:absolute; z-index:1; left:33%; bottom:-2%; width:min(78vw,1060px);
+  height:auto; opacity:.28; pointer-events:none; mix-blend-mode:multiply;
+  filter:saturate(.82) sepia(.08);
+  transform-origin:50% 70%;
+  animation:silkBreath 9s cubic-bezier(.45,0,.25,1) infinite alternate;
+}
+@keyframes silkBreath {
+  from { transform:translate3d(-8px,3px,0) rotate(-1deg) scale(.985); }
+  to { transform:translate3d(12px,-7px,0) rotate(.8deg) scale(1.015); }
+}
+.silk-story {
+  width:min(1320px,calc(100% - 56px)); min-height:520px; margin:72px auto 110px;
+  position:relative; overflow:hidden; border:1px solid rgba(64,45,31,.28);
+  background:#211914; isolation:isolate;
+}
+.silk-story-image {
+  position:absolute; inset:0; width:100%; height:100%; object-fit:cover;
+  filter:saturate(.76) sepia(.08); transform:scale(1.025);
+  transition:transform 1.3s cubic-bezier(.2,.7,.2,1), filter .8s ease;
+}
+.silk-story:hover .silk-story-image { transform:scale(1); filter:saturate(.94); }
+.silk-story::before {
+  content:''; position:absolute; inset:0; z-index:1;
+  background:linear-gradient(90deg,rgba(26,18,13,.92) 0%,rgba(31,21,15,.78) 32%,rgba(31,21,15,.15) 62%,rgba(31,21,15,.05) 100%);
+}
+.silk-story::after {
+  content:'THÊU'; position:absolute; z-index:1; right:3%; bottom:-.1em;
+  font:600 clamp(5rem,12vw,10rem)/.75 var(--serif); letter-spacing:-.06em;
+  color:rgba(255,246,230,.12); pointer-events:none;
+}
+.silk-story-copy {
+  position:relative; z-index:2; width:min(560px,58%); min-height:520px;
+  padding:clamp(42px,6vw,78px); display:flex; flex-direction:column; justify-content:center;
+  color:#f5ecdd;
+}
+.silk-story-kicker {
+  display:flex; align-items:center; gap:12px; margin-bottom:28px;
+  color:#d99a82; font:600 .62rem/1 var(--sans); letter-spacing:.22em; text-transform:uppercase;
+}
+.silk-story-kicker::before { content:''; width:30px; height:1px; background:currentColor; }
+.silk-story h2 {
+  font:500 clamp(3rem,5vw,5.3rem)/.88 var(--serif); letter-spacing:-.045em;
+  margin:0 0 28px; max-width:8ch;
+}
+.silk-story h2 em { color:#d8876f; font-weight:500; }
+.silk-story p { color:#d5cabd; line-height:1.8; max-width:48ch; font-size:.95rem; }
+.silk-story-note {
+  display:grid; grid-template-columns:auto 1fr; gap:14px; align-items:center;
+  margin-top:32px; padding-top:18px; border-top:1px solid rgba(255,255,255,.18);
+  color:#eee1cf; font-size:.67rem; letter-spacing:.12em; text-transform:uppercase;
+}
+.silk-story-note span:first-child { font:italic 1.8rem/1 var(--serif); color:#d8876f; }
+
+.reveal {
+  transition-timing-function:cubic-bezier(.22,1,.36,1);
+  transition-duration:.9s;
+}
+.award-card, .research-card, .leader-card, .social-card, .contact-link, #tq2026 img {
+  transition-duration:.45s !important;
+  transition-timing-function:cubic-bezier(.22,1,.36,1) !important;
+}
+
+@media (max-width: 900px) {
+  .hero::before { inset:82px 12px 20px; }
+  .hero-inner { grid-template-columns:1fr; }
+  .hero-right { display:block; max-width:330px; margin:18px auto 0; }
+  .hero-name { font-size:clamp(4rem,18vw,6rem); }
+  .stat-row { width:100%; display:grid; grid-template-columns:1fr 1fr; }
+  .stat-chip:nth-child(2) { border-right:0; }
+  .stat-chip:nth-child(-n+2) { border-bottom:1px solid var(--border); }
+  .id-card { width:100%; }
+  .hero-silk-ribbon { left:-12%; bottom:22%; width:128%; opacity:.18; }
+  .silk-story { width:calc(100% - 32px); min-height:580px; margin:50px auto 80px; }
+  .silk-story::before { background:linear-gradient(180deg,rgba(27,18,13,.3),rgba(27,18,13,.92) 58%); }
+  .silk-story-image { object-position:66% center; }
+  .silk-story-copy { width:100%; min-height:580px; justify-content:flex-end; padding:42px 32px; }
+  .silk-story h2 { max-width:10ch; }
+}
+@media (max-width: 560px) {
+  .hero { padding-inline:24px; }
+  .hero-sub { align-items:flex-start; }
+  .hero-quote { padding-left:18px; }
+  .awards-grid { grid-template-columns:1fr; }
+  #awards > div { padding-left:24px !important; padding-right:24px !important; }
+  .silk-story { min-height:620px; }
+  .silk-story-copy { min-height:620px; padding:34px 24px; }
+  .silk-story p { font-size:.88rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior:auto !important; animation-duration:.01ms !important; animation-iteration-count:1 !important; transition-duration:.01ms !important; }
+}
+</style>
 </head>
 <body>
 
@@ -1016,7 +1302,7 @@ footer {
 
 <!-- NAV -->
 <nav id="nav">
-  <a class="nav-logo" href="#">Quỳnh Chi ✦</a>
+  <a class="nav-logo" href="#">Quỳnh Chi · Silk & Science</a>
   <ul class="nav-links">
     <li><a href="#philosophy">Philosophy</a></li>
     <li><a href="#awards">Awards</a></li>
@@ -1034,7 +1320,7 @@ footer {
     <div class="hero-left">
       <div class="hero-badge">
         <div class="dot"></div>
-        Hanoi-Amsterdam High School for the Gifted
+        PORTFOLIO · SILK, SCIENCE & VIETNAMESE HERITAGE · 2026
       </div>
       <h1 class="hero-name">
         Thái Hồng<br>
@@ -1042,13 +1328,13 @@ footer {
       </h1>
       <div class="hero-sub">
         Chemistry Major
-        <span class="pill">🔬 Researcher</span>
-        <span class="pill">🏆 Olympian</span>
-        <span class="pill">🌱 Hanoi, Vietnam</span>
+        <span class="pill">Researcher</span>
+        <span class="pill">Embroidery Artist</span>
+        <span class="pill">Hanoi, Vietnam</span>
       </div>
       
       <div class="hero-quote">
-        Dedicated to exploring pharmacognosy and bio-extraction processes. Researching chemical formulations of Centella Asiatica and Vietnamese Cinnamon for advanced wound healing gels.
+        I follow one thread across two worlds: the precision of chemistry and the patience of embroidery. Through silk, natural dyes and Vietnamese craft, I explore how science can preserve what hands and memory have made.
       </div>
 
       <div class="stat-row">
@@ -1126,6 +1412,7 @@ footer {
       </div>
     </div>
   </div>
+  <img class="hero-silk-ribbon" src="assets/images/silk/embroidered-silk-ribbon.png" width="1960" height="768" alt="" aria-hidden="true" decoding="async">
 </section>
 
 <!-- SECTION: RESEARCH PHILOSOPHY -->
@@ -1136,6 +1423,16 @@ footer {
     <p class="reveal d1" style="font-size:1.35rem; line-height:1.7; color:var(--muted); font-family:var(--hand); font-weight:500;">
       My earliest chemistry projects focused on extraction, synthesis, and formulation. Over time, I became fascinated by a broader question: why do certain materials survive across centuries while others disappear? That question led me beyond the laboratory and into Vietnamese cultural heritage. Silk garments, calligraphy, herbal medicines, and traditional dyes are not only cultural artifacts; they are material systems shaped by chemistry, environment, and human craftsmanship. I now approach chemistry as a bridge between scientific inquiry and cultural preservation — studying how molecular properties, pigments, fibers, and bioactive compounds can help us understand and sustain Vietnamese traditions in a modern world.
     </p>
+  </div>
+</section>
+
+<section class="silk-story reveal" aria-labelledby="silk-story-title">
+  <img class="silk-story-image" src="assets/images/silk/silk-embroidery-lab.png" width="1672" height="939" alt="Khung thêu hoa sen trên nền lụa cùng lọ màu nhuộm tự nhiên" loading="lazy" decoding="async">
+  <div class="silk-story-copy">
+    <div class="silk-story-kicker">A material story</div>
+    <h2 id="silk-story-title">Where silk meets <em>science.</em></h2>
+    <p>Every stitch begins as a material question: how fibre holds tension, how natural dye binds to protein, and how careful hands turn chemistry into something worth preserving.</p>
+    <div class="silk-story-note"><span>01</span><span>Silk fibre · natural colour · hand embroidery</span></div>
   </div>
 </section>
 

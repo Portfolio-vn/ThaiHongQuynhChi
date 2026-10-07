@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tơ Lụa — Thái Hồng Quỳnh Chi</title>
+<meta name="description" content="Silk, embroidery, natural colour and Vietnamese heritage — the things Thái Hồng Quỳnh Chi loves.">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #f2eadb;
+  --paper: #f8f1e5;
+  --ink: #211b17;
+  --muted: #6f665c;
+  --red: #9f342b;
+  --rose: #d8876f;
+  --wine: #672f33;
+  --sage: #66735b;
+  --gold: #b08a4a;
+  --dark: #241d18;
+  --border: rgba(64,45,31,.20);
+  --serif: 'Cormorant Garamond', Georgia, serif;
+  --sans: 'DM Sans', system-ui, sans-serif;
+}
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; background:var(--dark); }
+body {
+  font-family:var(--sans); color:var(--ink); overflow-x:hidden;
+  background-color:var(--bg);
+  background-image:
+    linear-gradient(rgba(91,65,41,.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(91,65,41,.025) 1px, transparent 1px);
+  background-size:5px 5px;
+}
+img { display:block; max-width:100%; }
+a { color:inherit; }
+::selection { background:var(--red); color:var(--paper); }
+
+/* NAV */
+nav {
+  position:fixed; inset:0 0 auto 0; z-index:50;
+  display:flex; align-items:center; justify-content:space-between; gap:20px;
+  padding:18px clamp(16px,5vw,72px);
+  transition:background .4s, border-color .4s, color .4s;
+  color:var(--paper); border-bottom:1px solid transparent;
+}
+nav.scrolled { background:rgba(242,234,219,.92); color:var(--ink); border-color:var(--border); backdrop-filter:blur(12px); }
+.nav-logo { font-size:.72rem; letter-spacing:.24em; text-transform:uppercase; text-decoration:none; white-space:nowrap; }
+.nav-logo::before { content:'✦'; color:var(--rose); margin-right:10px; }
+.nav-links { display:flex; gap:28px; list-style:none; }
+.nav-links a { font-size:.74rem; letter-spacing:.14em; text-transform:uppercase; text-decoration:none; opacity:.8; }
+.nav-links a:hover { opacity:1; color:var(--rose); }
+.nav-back {
+  font-size:.72rem; letter-spacing:.14em; text-transform:uppercase; text-decoration:none;
+  border:1px solid currentColor; padding:9px 16px; border-radius:999px; white-space:nowrap;
+  transition:background .3s, color .3s;
+}
+.nav-back:hover { background:var(--red); border-color:var(--red); color:var(--paper); }
+
+/* HERO */
+.hero { position:relative; min-height:100vh; display:flex; align-items:flex-end; overflow:hidden; color:var(--paper); }
+.hero-img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:70% center; transform:scale(1.06); animation:heroIn 2.4s cubic-bezier(.2,.7,.2,1) forwards; }
+@keyframes heroIn { to { transform:scale(1); } }
+.hero::before { content:''; position:absolute; inset:0; z-index:1; background:linear-gradient(90deg,rgba(27,18,13,.92) 0%,rgba(27,18,13,.66) 42%,rgba(27,18,13,.08) 75%), linear-gradient(0deg,rgba(27,18,13,.6),transparent 40%); }
+.hero-copy { position:relative; z-index:2; padding:0 clamp(16px,6vw,96px) clamp(56px,10vh,110px); max-width:820px; }
+.kicker { display:flex; align-items:center; gap:14px; font-size:.72rem; letter-spacing:.26em; text-transform:uppercase; color:var(--rose); margin-bottom:22px; }
+.kicker::before { content:''; width:34px; height:1px; background:currentColor; }
+.hero h1 { font-family:var(--serif); font-weight:600; font-size:clamp(3.4rem,9vw,7.6rem); line-height:.88; letter-spacing:-.02em; }
+.hero h1 em { display:block; font-style:italic; font-weight:500; color:var(--rose); font-size:.52em; letter-spacing:0; margin-top:14px; }
+.hero p { margin-top:28px; max-width:52ch; line-height:1.85; color:#e2d7c9; font-size:1rem; }
+.scroll-cue { position:absolute; z-index:2; right:clamp(16px,5vw,72px); bottom:40px; writing-mode:vertical-rl; font-size:.68rem; letter-spacing:.3em; text-transform:uppercase; color:#d5cabd; }
+.scroll-cue::after { content:''; display:inline-block; width:1px; height:56px; background:currentColor; margin-top:14px; animation:cue 2s ease-in-out infinite; transform-origin:top; }
+@keyframes cue { 0%,100% { transform:scaleY(.3); } 50% { transform:scaleY(1); } }
+
+/* SHARED */
+section { position:relative; }
+.wrap { max-width:1180px; margin:0 auto; padding:0 clamp(16px,5vw,56px); }
+.sec { padding:clamp(80px,12vw,140px) 0; }
+.sec-tag { font-size:.7rem; letter-spacing:.26em; text-transform:uppercase; color:var(--red); display:flex; align-items:center; gap:12px; margin-bottom:18px; }
+.sec-tag::before { content:''; width:28px; height:1px; background:currentColor; }
+h2 { font-family:var(--serif); font-weight:600; font-size:clamp(2.4rem,5vw,4rem); line-height:1; letter-spacing:-.01em; }
+h2 em { font-style:italic; font-weight:500; color:var(--red); }
+.lead { font-family:var(--serif); font-size:clamp(1.25rem,2.2vw,1.6rem); line-height:1.6; color:var(--muted); font-weight:500; }
+
+/* INTRO */
+.intro-grid { display:grid; grid-template-columns:1.05fr 1fr; gap:clamp(36px,6vw,90px); align-items:center; }
+.intro-text .lead { margin-top:30px; }
+.intro-text p.body { margin-top:22px; line-height:1.85; color:var(--muted); font-size:.95rem; max-width:56ch; }
+.intro-stack { position:relative; aspect-ratio:4/5; }
+.intro-stack img { position:absolute; object-fit:cover; box-shadow:0 24px 60px rgba(55,38,24,.18); }
+.intro-stack .a { width:78%; height:76%; top:0; right:0; }
+.intro-stack .b { width:52%; height:46%; left:0; bottom:0; border:10px solid var(--paper); }
+.intro-stack .seal { position:absolute; right:6%; bottom:6%; width:84px; height:84px; border-radius:50%; background:var(--red); color:var(--paper); display:grid; place-items:center; font-family:Georgia,serif; font-size:2.1rem; box-shadow:0 10px 26px rgba(103,47,51,.35); transform:rotate(-8deg); }
+
+/* RIBBON DIVIDER */
+.ribbon-band { position:relative; height:clamp(140px,22vw,260px); overflow:hidden; }
+.ribbon-band img { position:absolute; left:50%; top:50%; width:min(1500px,130%); transform:translate(-50%,-50%) rotate(-3deg); opacity:.95; animation:float 10s ease-in-out infinite alternate; }
+@keyframes float { to { transform:translate(-50%,-54%) rotate(-1deg); } }
+
+/* LOVES */
+.loves { background:var(--paper); border-top:1px solid var(--border); border-bottom:1px solid var(--border); }
+.loves-head { display:flex; justify-content:space-between; align-items:flex-end; gap:30px; flex-wrap:wrap; margin-bottom:56px; }
+.loves-head .lead { max-width:40ch; font-size:1.2rem; }
+.love-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:28px; }
+.love { background:var(--bg); border:1px solid var(--border); display:flex; flex-direction:column; transition:transform .5s cubic-bezier(.2,.7,.2,1), box-shadow .5s; }
+.love:hover { transform:translateY(-6px); box-shadow:0 22px 50px rgba(55,38,24,.14); }
+.love-img { aspect-ratio:4/3; overflow:hidden; }
+.love-img img { width:100%; height:100%; object-fit:cover; transition:transform 1.2s cubic-bezier(.2,.7,.2,1); }
+.love:hover .love-img img { transform:scale(1.06); }
+.love-body { padding:26px 26px 30px; display:flex; flex-direction:column; gap:12px; flex:1; }
+.love-vn { font-size:.68rem; letter-spacing:.22em; text-transform:uppercase; color:var(--red); }
+.love h3 { font-family:var(--serif); font-size:1.7rem; font-weight:600; line-height:1.1; }
+.love p { font-size:.9rem; line-height:1.8; color:var(--muted); }
+.love .tags { margin-top:auto; padding-top:10px; display:flex; flex-wrap:wrap; gap:8px; }
+.love .tags span { font-size:.7rem; letter-spacing:.06em; padding:5px 11px; border:1px solid var(--border); border-radius:999px; color:var(--wine); background:rgba(255,255,255,.4); }
+
+/* GALLERY */
+.gallery-head { text-align:center; max-width:720px; margin:0 auto 56px; }
+.gallery-head .sec-tag { justify-content:center; }
+.gallery-head .sec-tag::after { content:''; width:28px; height:1px; background:currentColor; }
+.gallery-head .lead { margin-top:20px; font-size:1.2rem; }
+.masonry { columns:3 300px; column-gap:18px; }
+.masonry figure { break-inside:avoid; margin-bottom:18px; position:relative; overflow:hidden; cursor:zoom-in; background:var(--paper); }
+.masonry img { width:100%; height:auto; transition:transform 1s cubic-bezier(.2,.7,.2,1), filter .6s; }
+.masonry figure:hover img { transform:scale(1.04); filter:saturate(1.08); }
+.masonry figcaption { position:absolute; inset:auto 0 0 0; padding:40px 18px 16px; color:var(--paper); font-family:var(--serif); font-size:1.15rem; font-style:italic; background:linear-gradient(0deg,rgba(27,18,13,.78),transparent); opacity:0; transform:translateY(8px); transition:opacity .45s, transform .45s; }
+.masonry figure:hover figcaption, .masonry figure:focus-visible figcaption { opacity:1; transform:none; }
+.masonry figure:focus-visible { outline:2px solid var(--red); outline-offset:3px; }
+
+/* PROCESS */
+.process { background:var(--dark); color:var(--paper); overflow:hidden; }
+.process h2 em { color:var(--rose); }
+.process .sec-tag { color:var(--rose); }
+.process-grid { display:grid; grid-template-columns:.9fr 1.1fr; gap:clamp(36px,6vw,90px); align-items:start; }
+.process-img { position:sticky; top:110px; }
+.process-img img { width:100%; aspect-ratio:4/5; object-fit:cover; }
+.process-img small { display:block; margin-top:14px; font-family:var(--serif); font-style:italic; color:#bfb2a3; font-size:1.05rem; }
+.steps { list-style:none; margin-top:44px; }
+.steps li { display:grid; grid-template-columns:64px 1fr; gap:18px; padding:28px 0; border-top:1px solid rgba(248,241,229,.14); }
+.steps li:last-child { border-bottom:1px solid rgba(248,241,229,.14); }
+.steps .glyph { font-family:Georgia,serif; font-size:2rem; color:var(--rose); line-height:1; }
+.steps h3 { font-family:var(--serif); font-size:1.55rem; font-weight:600; margin-bottom:8px; }
+.steps p { color:#cfc3b5; line-height:1.8; font-size:.92rem; }
+
+/* PALETTE */
+.palette-grid { display:grid; grid-template-columns:repeat(5,1fr); gap:16px; margin-top:52px; }
+.swatch { border:1px solid var(--border); background:var(--paper); }
+.swatch .chip { aspect-ratio:1/1.1; position:relative; overflow:hidden; }
+.swatch .chip::after { content:''; position:absolute; inset:0; background:repeating-linear-gradient(115deg,rgba(255,255,255,.08) 0 2px,transparent 2px 7px); mix-blend-mode:soft-light; }
+.swatch .info { padding:16px 16px 20px; }
+.swatch b { display:block; font-family:var(--serif); font-size:1.3rem; font-weight:600; }
+.swatch i { display:block; font-size:.72rem; letter-spacing:.08em; color:var(--red); font-style:normal; text-transform:uppercase; margin:4px 0 10px; }
+.swatch span { font-size:.82rem; color:var(--muted); line-height:1.6; }
+
+/* WONDER */
+.wonder { background:var(--paper); border-top:1px solid var(--border); }
+.wonder-grid { display:grid; grid-template-columns:1fr 1fr; gap:clamp(36px,6vw,80px); align-items:center; }
+.questions { list-style:none; display:flex; flex-direction:column; gap:0; margin-top:34px; }
+.questions li { font-family:var(--serif); font-size:clamp(1.2rem,2vw,1.45rem); line-height:1.45; padding:20px 0 20px 40px; border-top:1px solid var(--border); position:relative; }
+.questions li::before { content:'?'; position:absolute; left:0; top:18px; font-style:italic; color:var(--red); font-size:1.6rem; }
+.wonder-pair { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+.wonder-pair img { width:100%; aspect-ratio:3/4; object-fit:cover; }
+.wonder-pair img:last-child { margin-top:48px; }
+
+/* QUOTE */
+.quote { position:relative; min-height:80vh; display:grid; place-items:center; text-align:center; overflow:hidden; color:var(--paper); }
+.quote img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
+.quote::before { content:''; position:absolute; inset:0; z-index:1; background:rgba(27,18,13,.62); }
+.quote-inner { position:relative; z-index:2; max-width:860px; padding:80px clamp(16px,5vw,40px); }
+.quote blockquote { font-family:var(--serif); font-style:italic; font-size:clamp(1.8rem,4vw,3.1rem); line-height:1.25; font-weight:500; }
+.quote cite { display:block; margin-top:28px; font-style:normal; font-size:.72rem; letter-spacing:.26em; text-transform:uppercase; color:var(--rose); }
+
+/* FOOTER */
+footer { background:var(--dark); color:#cfc3b5; padding:56px clamp(16px,5vw,72px); display:flex; justify-content:space-between; align-items:center; gap:24px; flex-wrap:wrap; }
+footer .name { font-family:var(--serif); font-size:1.5rem; color:var(--paper); }
+footer .name span { color:var(--rose); }
+footer a.back { text-decoration:none; font-size:.74rem; letter-spacing:.16em; text-transform:uppercase; border:1px solid rgba(248,241,229,.4); padding:12px 22px; border-radius:999px; transition:background .3s, border-color .3s; }
+footer a.back:hover { background:var(--red); border-color:var(--red); color:var(--paper); }
+
+/* LIGHTBOX */
+.lb { position:fixed; inset:0; z-index:100; background:rgba(20,14,10,.94); display:none; align-items:center; justify-content:center; padding:56px 16px; }
+.lb.open { display:flex; }
+.lb figure { max-width:min(1100px,100%); max-height:100%; display:flex; flex-direction:column; align-items:center; gap:16px; }
+.lb img { max-height:78vh; width:auto; object-fit:contain; box-shadow:0 30px 80px rgba(0,0,0,.5); }
+.lb figcaption { color:#e2d7c9; font-family:var(--serif); font-style:italic; font-size:1.2rem; text-align:center; }
+.lb button { position:absolute; background:none; border:1px solid rgba(248,241,229,.35); color:var(--paper); width:48px; height:48px; border-radius:50%; font-size:1.3rem; cursor:pointer; transition:background .3s; }
+.lb button:hover { background:var(--red); border-color:var(--red); }
+.lb .close { top:18px; right:18px; }
+.lb .prev { left:18px; top:50%; transform:translateY(-50%); }
+.lb .next { right:18px; top:50%; transform:translateY(-50%); }
+
+/* REVEAL */
+.reveal { opacity:0; transform:translateY(28px); transition:opacity 1s cubic-bezier(.2,.7,.2,1), transform 1s cubic-bezier(.2,.7,.2,1); }
+.reveal.in { opacity:1; transform:none; }
+.d1 { transition-delay:.12s; } .d2 { transition-delay:.24s; } .d3 { transition-delay:.36s; }
+
+/* RESPONSIVE */
+@media (max-width:980px) {
+  .nav-links { display:none; }
+  .intro-grid, .process-grid, .wonder-grid { grid-template-columns:1fr; }
+  .love-grid { grid-template-columns:repeat(2,1fr); }
+  .palette-grid { grid-template-columns:repeat(3,1fr); }
+  .process-img { position:relative; top:0; }
+  .process-img img { aspect-ratio:16/10; }
+}
+@media (max-width:640px) {
+  .love-grid { grid-template-columns:1fr; }
+  .ribbon-band { height:46vw; }
+  .ribbon-band img { width:125%; }
+  .palette-grid { grid-template-columns:repeat(2,1fr); }
+  .hero::before { background:linear-gradient(0deg,rgba(27,18,13,.95) 0%,rgba(27,18,13,.7) 55%,rgba(27,18,13,.2) 100%); }
+  .hero-img { object-position:72% center; }
+  .scroll-cue { display:none; }
+  .steps li { grid-template-columns:44px 1fr; }
+  .lb .prev, .lb .next { top:auto; bottom:18px; transform:none; }
+  .nav-logo { font-size:.62rem; letter-spacing:.16em; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation:none !important; transition:none !important; scroll-behavior:auto !important; }
+  .reveal { opacity:1; transform:none; }
+}
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <a class="nav-logo" href="#top">Quỳnh Chi · Tơ Lụa</a>
+  <ul class="nav-links">
+    <li><a href="#loves">What I Love</a></li>
+    <li><a href="#gallery">Gallery</a></li>
+    <li><a href="#process">Slow Craft</a></li>
+    <li><a href="#palette">Colours</a></li>
+  </ul>
+  <a class="nav-back" href="index.html">← Portfolio</a>
+</nav>
+
+<!-- HERO -->
+<header class="hero" id="top">
+  <img class="hero-img" src="assets/images/silk/silk-embroidery-lab.png" width="1672" height="939" alt="Khung thêu hoa sen đỏ trên nền lụa, bên cạnh lọ màu nhuộm tự nhiên" fetchpriority="high">
+  <div class="hero-copy">
+    <div class="kicker">Passions &amp; Pursuits</div>
+    <h1>Tơ Lụa<em>a thread I keep following</em></h1>
+    <p>Away from tests and timetables, this is where my hands go: silk on a hoop, a needle of red thread, a jar of colour steeped from plants. These are the things I love — quietly, patiently, and for their own sake.</p>
+  </div>
+  <div class="scroll-cue">Scroll</div>
+</header>
+
+<!-- INTRO -->
+<section class="sec" id="intro">
+  <div class="wrap intro-grid">
+    <div class="intro-text">
+      <div class="sec-tag reveal">Why silk</div>
+      <h2 class="reveal d1">Soft to the hand,<br><em>strong in memory.</em></h2>
+      <p class="lead reveal d2">I grew up seeing silk as something precious that lived in grandmothers' wardrobes — áo dài folded with care, scarves kept for Tết. Only later did I realise how much life is woven into a single length of it.</p>
+      <p class="body reveal d3">Silk is where the two halves of me meet. The part that loves chemistry wonders how a protein fibre can shine like that, hold colour for centuries, and still feel cool against skin. The part that loves making things simply wants to sit by a window and stitch a lotus, one strand at a time.</p>
+    </div>
+    <div class="intro-stack reveal d2">
+      <img class="a" src="assets/images/silk/details/lotus-hoop.jpg" alt="Hoa sen thêu tay trên khung tròn" loading="lazy">
+      <img class="b" src="assets/images/silk/details/thread-bowl.jpg" alt="Cuộn chỉ đỏ trong bát gốm" loading="lazy">
+      <div class="seal" aria-hidden="true">絲</div>
+    </div>
+  </div>
+</section>
+
+<div class="ribbon-band" aria-hidden="true">
+  <img src="assets/images/silk/embroidered-silk-ribbon.png" width="1960" height="768" alt="" loading="lazy">
+</div>
+
+<!-- LOVES -->
+<section class="sec loves" id="loves">
+  <div class="wrap">
+    <div class="loves-head">
+      <div>
+        <div class="sec-tag reveal">Things I love</div>
+        <h2 class="reveal d1">Small obsessions,<br><em>woven together.</em></h2>
+      </div>
+      <p class="lead reveal d2">None of these are about winning anything. They are what I reach for on a free afternoon.</p>
+    </div>
+
+    <div class="love-grid">
+      <article class="love reveal">
+        <div class="love-img"><img src="assets/images/silk/details/lotus-petals.jpg" alt="Cận cảnh mũi thêu cánh hoa sen" loading="lazy"></div>
+        <div class="love-body">
+          <div class="love-vn">Thêu tay</div>
+          <h3>Hand embroidery</h3>
+          <p>Long-and-short stitches that let one colour fade into another. I love how a petal only becomes a petal after hundreds of tiny, patient decisions.</p>
+          <div class="tags"><span>Satin stitch</span><span>Thread painting</span><span>Lotus motifs</span></div>
+        </div>
+      </article>
+
+      <article class="love reveal d1">
+        <div class="love-img"><img src="assets/images/silk/details/dye-bottle.jpg" alt="Lọ màu nhuộm tự nhiên và cánh hoa khô" loading="lazy"></div>
+        <div class="love-body">
+          <div class="love-vn">Màu nhuộm tự nhiên</div>
+          <h3>Colour from plants</h3>
+          <p>Steeping petals, bark and roots and watching the water turn. Every batch is a little different — and that unpredictability is exactly what I enjoy.</p>
+          <div class="tags"><span>Củ nâu</span><span>Chàm</span><span>Hoa hòe</span></div>
+        </div>
+      </article>
+
+      <article class="love reveal d2">
+        <div class="love-img"><img src="assets/images/silk/details/ribbon-lotus-left.jpg" alt="Hoa sen thêu trên dải lụa" loading="lazy"></div>
+        <div class="love-body">
+          <div class="love-vn">Hoa sen</div>
+          <h3>The lotus</h3>
+          <p>My favourite thing to stitch. It grows out of mud and still opens clean — a quiet Vietnamese idea of grace that I return to again and again.</p>
+          <div class="tags"><span>Symbolism</span><span>Vietnamese motifs</span></div>
+        </div>
+      </article>
+
+      <article class="love reveal">
+        <div class="love-img"><img src="assets/images/silk/details/window-light.jpg" alt="Ánh nắng qua khung cửa gỗ chiếu lên bàn" loading="lazy"></div>
+        <div class="love-body">
+          <div class="love-vn">Thư pháp · Mực</div>
+          <h3>Ink, brush &amp; silence</h3>
+          <p>Calligraphy taught me to slow my breathing before a stroke. Ink on silk behaves differently from ink on paper, and I am endlessly curious about why.</p>
+          <div class="tags"><span>Calligraphy</span><span>Mindfulness</span></div>
+        </div>
+      </article>
+
+      <article class="love reveal d1">
+        <div class="love-img"><img src="assets/images/research/tuong.png" alt="Ống nghiệm chiết xuất màu từ thực vật" loading="lazy"></div>
+        <div class="love-body">
+          <div class="love-vn">Hóa học của lụa</div>
+          <h3>The science in the fibre</h3>
+          <p>Fibroin, sericin, tannins, mordants — the vocabulary of why silk shines and why some colours last while others fade. Chemistry makes the craft even more beautiful to me.</p>
+          <div class="tags"><span>Fibroin</span><span>Mordants</span><span>Natural dyes</span></div>
+        </div>
+      </article>
+
+      <article class="love reveal d2">
+        <div class="love-img"><img src="assets/images/silk/details/dried-flowers.jpg" alt="Hoa khô và hộp gỗ cổ" loading="lazy"></div>
+        <div class="love-body">
+          <div class="love-vn">Tơ Lụa &amp; Mực</div>
+          <h3>Stories of heritage</h3>
+          <p>Reading about silk garments across Vietnamese dynasties and sharing those stories online — how a colour, a pattern or a weave can say who someone was.</p>
+          <div class="tags"><span>Áo dài</span><span>History</span><span>Storytelling</span></div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="sec" id="gallery">
+  <div class="wrap">
+    <div class="gallery-head">
+      <div class="sec-tag reveal">Gallery</div>
+      <h2 class="reveal d1">Close to <em>the thread.</em></h2>
+      <p class="lead reveal d2">Details I love looking at — tap any image to see it larger.</p>
+    </div>
+    <div class="masonry" id="masonry">
+      <figure class="reveal" tabindex="0"><img src="assets/images/silk/details/lotus-hoop.jpg" alt="Lotus on the hoop" loading="lazy"><figcaption>A lotus on the hoop</figcaption></figure>
+      <figure class="reveal d1" tabindex="0"><img src="assets/images/silk/details/ribbon-lotus-right.jpg" alt="Lotus bud on silk ribbon" loading="lazy"><figcaption>A bud, about to open</figcaption></figure>
+      <figure class="reveal d2" tabindex="0"><img src="assets/images/silk/details/thimble-thread.jpg" alt="Brass thimble and red thread" loading="lazy"><figcaption>Brass thimble, loose thread</figcaption></figure>
+      <figure class="reveal" tabindex="0"><img src="assets/images/silk/details/dye-bottle.jpg" alt="Natural dye in a glass bottle" loading="lazy"><figcaption>Colour steeped from petals</figcaption></figure>
+      <figure class="reveal d1" tabindex="0"><img src="assets/images/silk/details/ribbon-leaves.jpg" alt="Embroidered leaves with gold line" loading="lazy"><figcaption>Leaves traced in gold</figcaption></figure>
+      <figure class="reveal d2" tabindex="0"><img src="assets/images/silk/details/lotus-petals.jpg" alt="Embroidered lotus petals close-up" loading="lazy"><figcaption>Petals, stitch by stitch</figcaption></figure>
+      <figure class="reveal" tabindex="0"><img src="assets/images/silk/details/thread-bowl.jpg" alt="Red silk thread in ceramic bowl" loading="lazy"><figcaption>Red thread in a ceramic bowl</figcaption></figure>
+      <figure class="reveal d1" tabindex="0"><img src="assets/images/silk/details/ribbon-stitch.jpg" alt="Flowing embroidered stems on silk" loading="lazy"><figcaption>Stems that move like water</figcaption></figure>
+      <figure class="reveal d2" tabindex="0"><img src="assets/images/silk/details/ribbon-lotus-left.jpg" alt="Full lotus embroidered on ribbon" loading="lazy"><figcaption>Lotus in full bloom</figcaption></figure>
+      <figure class="reveal" tabindex="0"><img src="assets/images/silk/details/window-light.jpg" alt="Afternoon light through a wooden window" loading="lazy"><figcaption>Afternoon light, my favourite time to stitch</figcaption></figure>
+      <figure class="reveal d1" tabindex="0"><img src="assets/images/silk/details/dried-flowers.jpg" alt="Dried flowers by an old wooden box" loading="lazy"><figcaption>Dried flowers, kept for colour</figcaption></figure>
+      <figure class="reveal d2" tabindex="0"><img src="assets/images/research/tuong.png" alt="Plant extracts in test tubes" loading="lazy"><figcaption>Where the colour begins</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="sec process" id="process">
+  <div class="wrap process-grid">
+    <div class="process-img reveal">
+      <img src="assets/images/silk/details/lotus-hoop.jpg" alt="Hoa sen thêu dở trên khung" loading="lazy">
+      <small>Unfinished is my favourite stage.</small>
+    </div>
+    <div>
+      <div class="sec-tag reveal">Slow craft</div>
+      <h2 class="reveal d1">An afternoon<br><em>with the needle.</em></h2>
+      <ol class="steps">
+        <li class="reveal"><span class="glyph">一</span><div><h3>Choose the silk</h3><p>I run the fabric between my fingers first. Some silk is crisp, some drapes like water — each one asks for a different kind of stitch.</p></div></li>
+        <li class="reveal"><span class="glyph">二</span><div><h3>Draw the motif</h3><p>Usually a lotus, a leaf, a curling stem. I sketch lightly and leave space for the thread to change the plan.</p></div></li>
+        <li class="reveal"><span class="glyph">三</span><div><h3>Prepare the colour</h3><p>Some days I use ready thread; on others I try dyeing my own with plant material and a mordant, then wait to see what shade appears.</p></div></li>
+        <li class="reveal"><span class="glyph">四</span><div><h3>Stitch, slowly</h3><p>Long-and-short stitches, blending light into dark. This is the part where time disappears.</p></div></li>
+        <li class="reveal"><span class="glyph">五</span><div><h3>Step back &amp; look</h3><p>I hold the hoop up to the window. The way light moves across silk is the whole reason I keep doing this.</p></div></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- PALETTE -->
+<section class="sec" id="palette">
+  <div class="wrap">
+    <div class="sec-tag reveal">Colours I'm drawn to</div>
+    <h2 class="reveal d1">A palette from <em>Vietnamese plants.</em></h2>
+    <p class="lead reveal d2" style="max-width:52ch;margin-top:22px;">Traditional dyes that coloured silk long before synthetic pigments — the shades I most want to explore.</p>
+    <div class="palette-grid">
+      <div class="swatch reveal"><div class="chip" style="background:linear-gradient(160deg,#8a3b2a,#5c2418)"></div><div class="info"><b>Củ nâu</b><i>Dioscorea tuber</i><span>Warm reddish-brown, the colour of Hanoi's old peasant silk.</span></div></div>
+      <div class="swatch reveal d1"><div class="chip" style="background:linear-gradient(160deg,#2f4a6b,#1b2c44)"></div><div class="info"><b>Chàm</b><i>Indigo leaves</i><span>Deep mountain blue, fermented slowly and dipped again and again.</span></div></div>
+      <div class="swatch reveal d2"><div class="chip" style="background:linear-gradient(160deg,#d9b13a,#b98b1c)"></div><div class="info"><b>Hoa hòe</b><i>Sophora buds</i><span>Bright imperial yellow from tiny dried flower buds.</span></div></div>
+      <div class="swatch reveal"><div class="chip" style="background:linear-gradient(160deg,#a8302e,#76191d)"></div><div class="info"><b>Gỗ vang</b><i>Sappanwood</i><span>A clear red that shifts with every mordant — my lotus colour.</span></div></div>
+      <div class="swatch reveal d1"><div class="chip" style="background:linear-gradient(160deg,#5b5a4e,#33322b)"></div><div class="info"><b>Lá bàng</b><i>Almond leaves + iron</i><span>Soft grey-black when tannins meet iron — chemistry you can see.</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- WONDER -->
+<section class="sec wonder">
+  <div class="wrap wonder-grid">
+    <div>
+      <div class="sec-tag reveal">Questions I carry</div>
+      <h2 class="reveal d1">Things I still<br><em>wonder about.</em></h2>
+      <ul class="questions">
+        <li class="reveal">Why does some silk keep its colour for centuries while other pieces fade within years?</li>
+        <li class="reveal d1">How did our ancestors learn which leaf, root and mud would fix a colour — without any chemistry textbook?</li>
+        <li class="reveal d2">Can old craft knowledge help us make more sustainable textiles today?</li>
+      </ul>
+    </div>
+    <div class="wonder-pair reveal d2">
+      <img src="assets/images/silk/details/ribbon-stitch.jpg" alt="Đường thêu uốn lượn trên lụa" loading="lazy">
+      <img src="assets/images/silk/details/thimble-thread.jpg" alt="Đê khâu bằng đồng và chỉ đỏ" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<!-- QUOTE -->
+<section class="quote">
+  <img src="assets/images/silk/details/window-light.jpg" alt="" loading="lazy" aria-hidden="true">
+  <div class="quote-inner reveal">
+    <blockquote>“Every stitch is a small act of remembering — of hands, of plants, of the people who wore silk before me.”</blockquote>
+    <cite>Thái Hồng Quỳnh Chi</cite>
+  </div>
+</section>
+
+<footer>
+  <div class="name">Thái Hồng Quỳnh Chi <span>✦</span> Tơ Lụa</div>
+  <a class="back" href="index.html">← Back to Portfolio</a>
+</footer>
+
+<!-- LIGHTBOX -->
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Image viewer">
+  <button class="close" aria-label="Close">×</button>
+  <button class="prev" aria-label="Previous">‹</button>
+  <figure><img id="lb-img" alt=""><figcaption id="lb-cap"></figcaption></figure>
+  <button class="next" aria-label="Next">›</button>
+</div>
+
+<script>
+// Nav background after hero
+const nav = document.getElementById('nav');
+const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > window.innerHeight * 0.75);
+window.addEventListener('scroll', onScroll, { passive: true });
+onScroll();
+
+// Reveal on scroll
+const io = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+}, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+// Lightbox
+const figs = [...document.querySelectorAll('#masonry figure')];
+const lb = document.getElementById('lb'), lbImg = document.getElementById('lb-img'), lbCap = document.getElementById('lb-cap');
+let cur = 0;
+const show = i => {
+  cur = (i + figs.length) % figs.length;
+  const img = figs[cur].querySelector('img');
+  lbImg.src = img.src; lbImg.alt = img.alt;
+  lbCap.textContent = figs[cur].querySelector('figcaption').textContent;
+};
+const open = i => { show(i); lb.classList.add('open'); document.body.style.overflow = 'hidden'; };
+const close = () => { lb.classList.remove('open'); document.body.style.overflow = ''; figs[cur].focus(); };
+figs.forEach((f, i) => {
+  f.addEventListener('click', () => open(i));
+  f.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(i); } });
+});
+lb.querySelector('.close').onclick = close;
+lb.querySelector('.prev').onclick = () => show(cur - 1);
+lb.querySelector('.next').onclick = () => show(cur + 1);
+lb.addEventListener('click', e => { if (e.target === lb) close(); });
+document.addEventListener('keydown', e => {
+  if (!lb.classList.contains('open')) return;
+  if (e.key === 'Escape') close();
+  if (e.key === 'ArrowLeft') show(cur - 1);
+  if (e.key === 'ArrowRight') show(cur + 1);
+});
+</script>
+</body>
+</html>
